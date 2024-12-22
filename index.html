@@ -103,6 +103,41 @@
     box-shadow: 0 6px 12px rgba(176, 87, 123, 0.3);
 }
 
+/* Стили для мобильных устройств */
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    header {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* Пример скрытия элементов для мобильных */
+    .desktop-only {
+        display: none;
+    }
+    
+    /* Изменение расположения элементов */
+    .nav {
+        display: block;
+        text-align: center;
+}
+
+/* Стили для планшетов и устройств с шириной от 768px до 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
 @media (max-width: 768px) {
     .course-list li {
         flex: 1 1 calc(50% - 20px); /* Two items per row on medium screens */
@@ -299,7 +334,7 @@
 </header>
     
       
-        <script src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\scriptstud.js"></script>
+        <script src="scriptstud.js"></script>
         <script>
             // Получаем данные пользователя из localStorage
             const userData = JSON.parse(localStorage.getItem('userData'));
@@ -438,7 +473,7 @@
 
 <!-- Листаемая карточка -->
 <div class="highlight-card">
-    <img src="WhatsApp 2024-10-02 в 14.20.14_8828de4f.jpg" alt="Experienced Instructors">
+    <img src="Изображение WhatsApp 2024-10-02 в 14.20.14_f0899e93.jpg" alt="Experienced Instructors">
     <h3>Experienced Instructors</h3>
     <p>Qualified teaching staff dedicated to your success:</p>
     <ul>
@@ -447,7 +482,7 @@
     </ul>
 </div>
 <div class="highlight-card">
-    <img src="WhatsApp 2024-10-02 в 14.22.43_40a061db.jpg" alt="Interactive Learning">
+    <img src="Изображение WhatsApp 2024-10-02 в 14.22.43_40a061db.jpg" alt="Interactive Learning">
     <h3>Interactive Learning</h3>
     <p>Engaging lesson formats that promote active participation:</p>
     <ul>
@@ -465,7 +500,7 @@
     </ul>
 </div>
 <div class="highlight-card">
-    <img src="WhatsApp 2024-10-02 в 14.21.24_d4fd94f8.jpg " alt="Cultural Immersion">
+    <img src="Изображение WhatsApp 2024-10-02 в 14.21.24_d4fd94f8.jpg" alt="Cultural Immersion">
     <h3>Cultural Immersion</h3>
     <p>Learn about English-speaking cultures through engaging content:</p>
     <ul>
