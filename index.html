@@ -103,41 +103,6 @@
     box-shadow: 0 6px 12px rgba(176, 87, 123, 0.3);
 }
 
-/* Стили для мобильных устройств */
-@media screen and (max-width: 767px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-    
-    header {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    /* Пример скрытия элементов для мобильных */
-    .desktop-only {
-        display: none;
-    }
-    
-    /* Изменение расположения элементов */
-    .nav {
-        display: block;
-        text-align: center;
-}
-
-/* Стили для планшетов и устройств с шириной от 768px до 1024px */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .container {
-        width: 90%;
-    }
-
-    .nav {
-        display: flex;
-        justify-content: space-around;
-    }
-}
-
 @media (max-width: 768px) {
     .course-list li {
         flex: 1 1 calc(50% - 20px); /* Two items per row on medium screens */
