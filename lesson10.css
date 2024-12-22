@@ -1,0 +1,555 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(45deg, hwb(256 44% 35%), #e18b9f); /* Градиентный фон */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fcfcf9;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s;
+}
+nav a:hover {
+    background: #e18b9f; /* Светлый эффект при наведении */
+}
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px  #e18b9f;
+}
+
+.lesson {
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    position: relative;
+}
+
+.lesson::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 20px;
+    background: linear-gradient(45deg,   hwb(256 74% 13%), #e18b9f);
+    z-index: -1;
+}
+
+.lesson h2 {
+    color:hwb(256 44% 35%)
+}
+.lesson h1{
+    color:hwb(256 44% 35%)
+}
+.lesson h3{
+    color:#e18b9f ;
+}
+
+ /* Photo gallery layout */
+ .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Photo item styles */
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    aspect-ratio: 16 / 9; /* Поддержка пропорций */
+}
+
+.photo-item:hover {
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+/* Image styles */
+.photo-item img {
+    width: 100%; /* Заполнение контейнера */
+    height: 100%; /* Заполнение контейнера */
+    object-fit: cover; /* Сохраняем пропорции без искажения */
+    border-radius: 10px;
+}
+
+/* Caption styles */
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .photo-caption {
+    opacity: 1;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.flashcard {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.flashcard:hover {
+    transform: scale(1.05);
+}
+
+.flashcard .translation {
+    display: none;
+    margin-top: 10px;
+    color:#e18b9f;
+}
+
+.flashcard .definition {
+    margin-top: 10px;
+    color: #555;
+}
+
+.vocabulary {
+    color: purple;
+    font-weight: bold;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+.flashcard {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+.flashcard:hover {
+    background-color: #f9f9f9;
+}
+.translation {
+    display: none;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+}
+.flashcard span {
+    font-weight: bold;
+    color: #0c120d;
+}
+
+/* General container for the exercise */
+.exercise-container {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Each pair container */
+.pair {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Last pair without a border */
+.pair:last-child {
+    border-bottom: none;
+}
+
+/* Concept text styling */
+.concept {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Dropdown select styling */
+.select-box {
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    width: 70%;
+    background-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus and hover states for the select box */
+.select-box:focus {
+    border-color: #e18b9f;
+    box-shadow: 0 0 5px rgba(225, 139, 159, 0.5);
+    outline: none;
+}
+
+.select-box:hover {
+    border-color: #aaa;
+}
+
+/* Check button styling */
+.check-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #e18b9f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and active states for the button */
+.check-button:hover {
+    background-color: #d77b8b;
+    transform: scale(1.05);
+}
+
+.check-button:active {
+    background-color: #c96b7b;
+    transform: scale(1);
+}
+/* Highlight correct pairs */
+.correct {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+}
+
+/* Highlight incorrect pairs */
+.incorrect {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+}
+
+
+/* Base styling for .response elements */
+.response {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Neutral border for all states */
+    border-radius: 5px;
+    resize: vertical; /* Allow vertical resizing for textareas */
+    color: #333; /* Default text color for readability */
+    background-color: #fff; /* Default background color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth state transitions */
+}
+
+/* Correct response style */
+.response.correct {
+    background-color: #c8e6c9; /* Light green background */
+    color: #2e7d32; /* Dark green text */
+    border-color: #81c784; /* Green border */
+}
+
+/* Incorrect response style */
+.response.incorrect {
+    background-color: #ffcdd2; /* Light red background */
+    color: #b71c1c; /* Dark red text */
+    border-color: #e57373; /* Red border */
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #e18b9f; /* Base pink background */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover and active states */
+button:hover {
+    background-color: #d77b8b; /* Slightly darker pink on hover */
+    transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+button:active {
+    background-color: #c96b7b; /* Darker pink on click */
+    transform: scale(1); /* Reset scale */
+}
+
+/* Textarea styles */
+textarea {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Neutral border */
+    border-radius: 5px; /* Smooth corners */
+    resize: vertical; /* Allow vertical resizing */
+    color: #333; /* Text color */
+    background-color: #fff; /* Background color */
+    transition: border-color 0.3s ease; /* Smooth focus effect */
+}
+
+/* Textarea focus state */
+textarea:focus {
+    border-color: #e18b9f; /* Pink border on focus */
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(225, 139, 159, 0.5); /* Soft pink shadow */
+}
+/* Base styling for the exercise container */
+#exercise {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9; /* Light background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px;
+}
+
+/* Styling for each sentence container */
+.sentence {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333; /* Neutral dark text */
+    line-height: 1.6;
+}
+
+/* Styling for input fields */
+.sentence input[type="text"] {
+    width: 200px; /* Fixed width for uniformity */
+    padding: 5px;
+    font-size: 14px;
+    color: #333; /* Neutral text */
+    background-color: #fff;
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input field hover and focus styles */
+.sentence input[type="text"]:hover {
+    border-color: #a6a6a6;
+}
+
+.sentence input[type="text"]:focus {
+    border-color: #e47cdd; /* Blue border for focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(138, 168, 217, 0.3);
+}
+
+
+/* Optional: Adjust layout for smaller screens */
+@media (max-width: 600px) {
+    .sentence input[type="text"] {
+        width: 100%; /* Make inputs responsive */
+    }
+}
+/* Basic container styling */
+.exercise-container {
+    margin: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Styling for each question */
+.question {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styling for input fields */
+.response {
+    width: 250px;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+/* Input field hover and focus states */
+.response:hover {
+    border-color: #a6a6a6;
+}
+
+.response:focus {
+    border-color: #4285f4;
+    outline: none;
+    box-shadow: 0 0 5px rgba(66, 133, 244, 0.3);
+}
+
+
+.link-with-icon {
+    display: inline-flex;
+    align-items:center;
+    background-color:   #e18b9f;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+.link-with-icon img {
+    width: 300px;
+    margin-right: 100px;
+}
+.link-with-icon:hover {
+    background-color:   #e18b9f;
+    transform: scale(1.05);
+}
+.link-with-icon:active {
+    background-color:  #e18b9f;
+}
+
+
+#task1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.column {
+    width: 45%;
+}
+
+.option,
+.answer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover,
+.answer:hover {
+    background-color: #e0e0e0;
+}
+
+.correct {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.answer-input {
+    width: 150px;
+    padding: 5px;
+}
+
+.button-container {
+    margin-top: 15px;
+}
+
+
+
+
+
+#submit-tasks-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+#submit-tasks-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+#submit-tasks-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+}
+#submit-tasks-container a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #e18b9f;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-tasks-container a:hover {
+    background-color:  #e18b9f;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #fffdfd;
+    border-top: 1px solid #ffffff;
+}
+
+

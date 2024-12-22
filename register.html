@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        .form-container {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color:  #94396b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color:  #94396b;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .message.error {
+            color: red;
+        }
+
+        .message.success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="registration">
+        <h2>Register</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" placeholder="Enter your full name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age" min="16" required>
+
+        <label for="password">Create Password:</label>
+        <input type="password" id="password" placeholder="Create a password" required>
+
+        <button onclick="register()">Register</button>
+        <p class="message" id="register-message"></p>
+        <p>Already have an account? <a href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\login.html">Login here</a></p>
+    </div>
+
+    <script>
+        function register() {
+            const username = document.getElementById('username').value;
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const age = parseInt(document.getElementById('age').value, 10);
+            const password = document.getElementById('password').value;
+
+            const messageEl = document.getElementById('register-message');
+
+            if (!username || !fullName || !email || !phone || !age || !password) {
+                messageEl.textContent = "All fields are required!";
+                messageEl.className = "message error";
+                return;
+            }
+
+            if (age < 16) {
+                messageEl.textContent = "You must be at least 16 years old to register.";
+                messageEl.className = "message error";
+                return;
+            }
+
+            const userData = {
+                username,
+                fullName,
+                email,
+                phone,
+                age,
+                password
+            };
+
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            messageEl.textContent = "Registration successful! Redirecting to login page...";
+            messageEl.className = "message success";
+
+            setTimeout(() => {
+                window.location.href = "Intermediate.html";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

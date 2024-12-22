@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        .form-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color:  #94396b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #94396b;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .message.error {
+            color: red;
+        }
+
+        .message.success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="login">
+        <h2>Login</h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <button onclick="login()">Login</button>
+        <p class="message" id="login-message"></p>
+        <p>Don't have an account? <a href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\register.html">Register here</a></p>
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const messageEl = document.getElementById('login-message');
+
+            if (!email || !password) {
+                messageEl.textContent = "Please enter both email and password!";
+                messageEl.className = "message error";
+                return;
+            }
+
+            const storedUserData = localStorage.getItem('userData');
+            if (!storedUserData) {
+                messageEl.textContent = "No user found. Please register first!";
+                messageEl.className = "message error";
+                return;
+            }
+
+            const userData = JSON.parse(storedUserData);
+
+            if (userData.email === email && userData.password === password) {
+                messageEl.textContent = "Login successful! Redirecting...";
+                messageEl.className = "message success";
+                setTimeout(() => {
+                    window.location.href = "Intermediate.html"; // or any other page after login
+                }, 2000);
+            } else {
+                messageEl.textContent = "Invalid email or password!";
+                messageEl.className = "message error";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,683 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(45deg, hwb(350 33% 20%), #326167); /* Градиентный фон */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fcfcf9;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s;
+}
+nav a:hover {
+    background: #d2a385; /* Светлый эффект при наведении */
+}
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px  hwb(350 33% 20%);
+}
+
+.lesson {
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    position: relative;
+}
+
+.lesson::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 20px;
+    background: linear-gradient(45deg,   hwb(256 74% 13%), #e18b9f);
+    z-index: -1;
+}
+
+.lesson h2 {
+    color:hwb(350 33% 20%)
+}
+.lesson h1{
+    color: #326167
+}
+.lesson h3{
+    color: #326167
+    /* Photo gallery layout */
+}
+/* Photo gallery layout */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Photo item styles */
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Caption styles */
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .photo-caption {
+    opacity: 1;
+}
+
+
+    .iframe-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+    iframe {
+        width: 80%;
+        height: 450px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.flashcard {
+    background-color: #fff;
+    border: 2px solid #b96384;
+    border-radius: 8px;
+    padding: 0px;
+    width: 80%;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.flashcard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.definition {
+    font-style: italic;
+    color:#b96384;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+
+/* Настройка для маленьких экранов */
+@media (max-width: 768px) {
+    .flashcard {
+        width: 100%;
+    }
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color:#326167;
+    margin-bottom: 10px;
+}
+.description {
+    margin-bottom: 20px;
+}
+.quiz-link {
+    text-align:center;
+    margin-top: 20px;
+}
+.quiz-link a {
+    color: #fff;
+    background-color: #326167;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.quiz-link img {
+    margin-top: 10px;
+    width: 200px;
+}
+
+.quiz-container {
+    margin: 20px 0;
+}
+.quiz-question {
+    margin-bottom: 10px;
+}
+.answer {
+    margin-left: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.answer:hover {
+    background-color:#e7bbc6;
+}
+.correct {
+    color: green;
+}
+.incorrect {
+    color: red;
+}
+.result {
+    font-weight: bold;
+    margin-top: 10px;
+}
+    .quiz-button {
+        display: inline-block; /* Изменяем на inline-block */
+        margin: 20px 0;
+        padding: 10px 20px;
+        background-color:#e18b9f;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+.quiz-button:hover {
+    background-color: #e18b9f;
+}
+p {
+    font-size: 1rem;
+    color: #333;
+}
+.example {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 4px solid #4CAF50;
+    margin-bottom: 20px;
+}
+.important {
+    color: #D32F2F;
+}
+
+
+.exercise-container {
+    margin-bottom: 20px;
+}
+.question {
+    margin-bottom: 10px;
+}
+.answer-box {
+    padding: 5px;
+    font-size: 1rem;
+    width: 300px;
+}
+.submit-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color:  #e18b9f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.result {
+    font-weight: bold;
+    color: #e18b9f;
+    display: none;
+}
+.incorrect {
+    color: red;
+}
+.correct {
+    color: green;
+}
+
+
+.exercise-container {
+    margin-bottom: 15px;
+}
+
+
+.answer {
+    margin-top: 5px;
+}
+
+.answer input {
+    padding: 8px;
+    width: 400px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.check-button {
+    padding: 10px 20px;
+    background-color: #e18b9f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.check-button:hover {
+    background-color: #e18b9f;
+}
+
+.correct {
+    background-color: #c8e6c9; /* Green background for correct answers */
+}
+
+.incorrect {
+    background-color: #f8d7da; /* Red background for incorrect answers */
+}
+
+/* Style for answer fields */
+.answer input.correct {
+    border-color: green;
+    background-color: #d4edda;
+}
+
+.answer input.incorrect {
+    border-color: red;
+    background-color: #f8d7da;
+}
+
+
+.exercise-container {
+    margin: 10px 0;
+}
+.question {
+    font-size: 16px;
+}
+.answer {
+    margin-top: 10px;
+}
+.button-container {
+    margin-top: 20px;
+}
+.check-button {
+    padding: 10px 20px;
+    background-color: #e18b9f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.check-button:hover {
+    background-color:#e18b9f;
+}
+.true-false-options {
+    margin-top: 15px;
+}
+.true-false-options label {
+    margin-right: 15px;
+}
+.correct {
+    background-color: lightgreen;
+}
+.incorrect {
+    background-color: lightcoral;
+}
+
+/* Style the container for the exercise */
+.exercise-container {
+    background-color: #f9f9f9;  /* Light background for each exercise */
+    border: 1px solid #ddd;  /* Border around each question */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+/* Styling for the question text */
+.exercise-container .question {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;  /* Darker text for questions */
+    margin-bottom: 10px;
+}
+
+/* Style for the input radio buttons */
+.exercise-container .answer input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);  /* Slightly bigger radio buttons */
+}
+
+/* Style for labels next to the radio buttons */
+.exercise-container .answer label {
+    font-size: 14px;
+    color: #555;  /* Lighter color for the options */
+    display: block;  /* Make each option appear on a new line */
+    cursor: pointer;  /* Change cursor to pointer when hovering */
+    padding: 5px;
+    transition: background-color 0.3s ease;  /* Smooth transition for hover */
+}
+
+/* Hover effect for options */
+.exercise-container .answer label:hover {
+    background-color: #f1f1f1;
+    border-radius: 4px;  /* Rounded corners for hover effect */
+}
+
+/* Style for the check button - position it on the left */
+.button-container {
+    text-align: left;  /* Align button to the left */
+    margin-top: 20px;
+}
+
+/* Adjust the check button's appearance */
+.check-button {
+    display: inline-block; /* Keeps the button inline */
+    padding: 10px 20px;
+    background-color: #e18b9f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    margin-left: 0;  /* Align to the left without any margin */
+}
+
+.check-button:hover {
+    background-color:#e18b9f;  /* Darker blue when hovered */
+}
+
+/* Styling for the feedback after the user answers */
+.exercise-container .answer input:checked + label {
+    font-weight: bold;
+}
+
+/* Styling for correct and incorrect answers */
+.correct {
+    background-color: #a8e6a1;  /* Light green background for correct answers */
+    color: #2e7d32;  /* Dark green text */
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.incorrect {
+    background-color: #f8d7da;  /* Light red background for incorrect answers */
+    color: #d32f2f;  /* Dark red text */
+    padding: 5px;
+    border-radius: 4px;
+}
+
+button:focus {
+    outline: none;  /* Remove the default outline when button is clicked */
+}
+
+
+.task-container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-container h3 {
+    margin-top: 0;
+}
+
+.task-instructions {
+    margin-bottom: 15px;
+}
+
+
+
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+input[type="file"] {
+    margin-bottom: 20px;
+}
+button {
+    background-color:#e18b9f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color:#e18b9f;
+}
+.info {
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+
+
+/* Container for the main content */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Instructions list styling */
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+/* Instructions list items */
+ol li {
+    margin-bottom: 15px;
+}
+
+/* Recording prompt styling */
+p.recording-prompt {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form#uploadForm {
+    background-color: #fff;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+form#uploadForm label {
+    font-size: 16px;
+    color: #444;
+}
+
+form#uploadForm input[type="file"] {
+    display: block;
+    margin: 20px 0;
+}
+
+form#uploadForm button#uploadBtn {
+    background-color: #005bb5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+form#uploadForm button#uploadBtn:hover {
+    background-color: #004b8f;
+}
+
+/* Video Playback Section */
+#videoPlayback {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Style for the preview area text */
+h3#previewTitle {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+video#videoPlayback {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure responsiveness for different devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2, h3 {
+        font-size: 24px;
+    }
+
+    form#uploadForm {
+        padding: 15px;
+    }
+}
+.correct {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.answer-input {
+    width: 150px;
+    padding: 5px;
+}
+
+.button-container {
+    margin-top: 15px;
+}
+
+
+
+
+
+#submit-tasks-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+#submit-tasks-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+#submit-tasks-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+}
+#submit-tasks-container a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: hwb(350 33% 20%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-tasks-container a:hover {
+    background-color: hwb(350 33% 20%);
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #fffdfd;
+    border-top: 1px solid #ffffff;
+}
+
+
+
+

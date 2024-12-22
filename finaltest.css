@@ -1,0 +1,190 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #ffffff;
+    color: #070607
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #070607;
+}
+
+.question-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #004a8f;
+}
+
+.question-card p {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options li {
+    margin-bottom: 10px;
+}
+
+label {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #004a8f;
+    color: white;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    background: #003366;
+}
+
+.nav-btn {
+    width: 45%;
+    padding: 10px;
+    background: #f0f0f0;
+    color: #333;
+    margin: 10px;
+}
+
+.nav-btn:hover {
+    background: #ddd;
+}
+
+.hidden {
+    display: none;
+}
+
+.fast-nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.fast-nav button {
+    background: #e0e0e0;
+    margin: 3px;
+    padding: 7px 12px;
+}
+
+.fast-nav button.active {
+    background: #004a8f;
+    color: white;
+}
+
+.result {
+    text-align: center;
+    font-size: 1.4em;
+    padding: 20px;
+    background: #e6ffee;
+    color: #006600;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1, h2 {
+    color: #0056b3;
+}
+.question {
+    margin: 10px 0;
+}
+.feedback {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.correct {
+    background-color: #d4edda;
+    color: #155724;
+}
+.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.certificate {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #eaf7ff;
+    color: #0056b3;
+    border: 2px dashed #0056b3;
+}
+button {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #00408d;
+}
+
+
+.certificate-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    background: url('certificate-template.jpg') no-repeat center center;
+    background-size: cover;
+}
+.name-field {
+    position: absolute;
+    top: 300px; /* Настройте положение */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+input {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+.download-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

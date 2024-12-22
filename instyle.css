@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box; /* Учитывает padding и границы в ширине и высоте элемента */
+    margin: 0; /* Убирает внешние отступы */
+    padding: 0; /* Убирает внутренние отступы */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    background: linear-gradient(to bottom, #f4f4f4, #e0e0e0);
+}
+
+header {
+    background: linear-gradient(to right, #790a49, #217878);
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffdd57; /* Яркий цвет при наведении */
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2, h3 {
+    margin: 15px 0;
+    font-weight: normal;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(148, 55, 105, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(148, 55, 105, 0.4);
+}
+
+article {
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #35424a;
+    border-bottom: 2px solid #893765;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+section {
+    margin-bottom: 50px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #fffcfe;
+    color: #060404;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: #060405;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color:#893765;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.button {
+    display: inline-block;
+    background:#893765;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: #893765;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2, h3 {
+        font-size: 1.5em;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,579 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(45deg,  hwb(355 1% 11%), #033260); /* Градиентный фон */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 17px;
+}
+
+nav a {
+    color: #fcfcf9;
+    text-decoration: none;
+    padding: 15px;
+    transition: background 0.3s;
+}
+nav a:hover {
+    background: #dacfc8; /* Светлый эффект при наведении */
+}
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px   #033260 ;
+}
+
+.lesson {
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    position: relative;
+}
+
+.lesson::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 20px;
+    background: linear-gradient(45deg,   hwb(355 1% 11%), #033260);
+    z-index: -1;
+}
+
+.lesson h2 {
+    color:#033260
+}
+.lesson h1{
+    color:#033260
+}
+.lesson h3{
+    color:hwb(355 1% 11%)
+}
+  
+
+
+/* Photo gallery layout */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Photo item styles */
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    aspect-ratio: 16 / 9; /* Поддержка пропорций */
+}
+
+.photo-item:hover {
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+/* Image styles */
+.photo-item img {
+    width: 100%; /* Заполнение контейнера */
+    height: 100%; /* Заполнение контейнера */
+    object-fit: cover; /* Сохраняем пропорции без искажения */
+    border-radius: 10px;
+}
+
+/* Caption styles */
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .photo-caption {
+    opacity: 1;
+}
+
+
+
+/* Styling for the container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Individual flashcard styling */
+.flashcard {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for flashcards */
+.flashcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for headings inside flashcards */
+.flashcard h3 {
+    font-size: 18px;
+    color: hwb(355 1% 11%);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Styling for definitions */
+.flashcard p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.flashcard em {
+    font-style: italic;
+    color:  #033260 ;
+}
+
+
+/* Container for the entire section */
+.vocabulary-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header section with title and description */
+.vocabulary-header {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: hwb(355 11% 27%); /* Green color */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Quiz section styling */
+.quiz-container {
+    text-align: center;
+}
+
+.quiz-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.quiz-button {
+    display: inline-block;
+    background-color:hwb(355 11% 27%);
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+    background-color: hwb(355 11% 27%); /* Darker green on hover */
+}
+
+/* Styling for QR code image */
+.qr-code {
+    margin-top: 20px;
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.qr-image:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Style for True/False exercise */
+.exercise {
+    margin: 20px;
+  }
+  
+  .statement {
+    margin-bottom: 10px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  .explanation {
+    color: blue; /* Set the explanation text color to blue */
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  /* Style for correct answers */
+  .correct {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Style for incorrect answers */
+  .incorrect {
+    background-color: #f44336;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  /* Style the button */
+button {
+    background-color: hwb(355 11% 27%); /* Green background */
+    color: white; /* White text color */
+    font-size: 16px; /* Font size */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  }
+  
+  /* Add hover effect to the button */
+  button:hover {
+    background-color: hwb(355 11% 27%); /* Darker green on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+ /* Style the input fields */
+input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style for the timeline events */
+  .timeline-event {
+    margin-bottom: 20px;
+  }
+  
+  /* Style the button */
+  button {
+    background-color: hwb(355 11% 27%); /* Green background */
+    color: white; /* White text color */
+    font-size: 16px; /* Font size */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  }
+  
+  button:hover {
+    background-color:hwb(355 11% 27%); /* Darker green on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+  /* Correct and Incorrect answer styling */
+  .correct {
+    background-color: lightgreen;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+  }
+  
+  .incorrect {
+    background-color: lightcoral;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+  }
+  
+  /* Explanation text color */
+  .explanation {
+    color: blue; /* Blue text color for explanations */
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+
+
+
+/* Styles specifically for the .tense section */
+.tense .container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next row */
+    justify-content: space-between; /* Space between columns */
+}
+
+.tense .card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 0 0 calc(45% - 20px); /* Cards are now wider with 2 columns */
+    box-sizing: border-box; /* Ensures padding and margin are included in total width */
+}
+
+.tense .card h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tense .card p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.tense .card p strong {
+    font-weight: bold;
+}
+
+/* Mobile and tablet adjustments */
+@media (max-width: 1024px) {
+    .tense .card {
+        flex: 0 0 calc(50% - 20px); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .tense .card {
+        flex: 0 0 calc(100% - 20px); /* One column on smaller screens */
+    }
+}
+
+
+/* Style for this specific exercise */
+.exercise-container {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: auto;
+}
+
+.exercise-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.gap {
+    border: 2px solid #ccc;
+    padding: 5px 10px;
+    width: 150px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.correct {
+    background-color: #c8e6c9; /* Green background for correct answers */
+    border-color: #4caf50;
+}
+
+.incorrect {
+    background-color: #ffcccb; /* Red background for incorrect answers */
+    border-color: #f44336;
+}
+
+.submit-btn {
+    background-color: hwb(355 11% 27%);;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color:hwb(355 11% 27%);;
+}
+
+/* To avoid affecting other parts of the site */
+.exercise-container input {
+    text-align: center;
+    max-width: 200px;
+}
+
+
+
+
+.correct {
+    color: green;
+}
+.incorrect {
+    color: red;
+}
+.question-container {
+    margin-bottom: 10px;
+}
+#checkAnswersBtn {
+    padding: 10px 20px;
+    background-color:hwb(355 11% 27%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+#checkAnswersBtn:hover {
+    background-color:hwb(355 11% 27%);
+
+}
+
+
+
+
+.listening-exercise {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  .question-container {
+    max-width: 900px;
+    margin: auto;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  textarea {
+    width: 100%;
+    height: 60px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+  }
+  .feedback {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .feedback.correct {
+    color: green;
+  }
+  .feedback.incorrect {
+    color: red;
+  }
+  button {
+    background-color: hwb(355 11% 27%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: hwb(355 11% 27%);
+  }
+
+  .question {
+    margin-bottom: 15px;
+  }
+  .question.correct {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+  }
+  .question.incorrect {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+  }
+  .result {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+
+
+  #submit-tasks-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+#submit-tasks-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+#submit-tasks-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+}
+#submit-tasks-container a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: hwb(355 11% 27%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-tasks-container a:hover {
+    background-color: hwb(355 11% 27%);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: rgb(254, 255, 255);
+    color:rgb(3, 3, 3);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

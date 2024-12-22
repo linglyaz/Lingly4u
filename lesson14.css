@@ -1,0 +1,761 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(45deg, hwb(355 11% 27%), #2a7a81); /* Градиентный фон */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fcfcf9;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s;
+}
+nav a:hover {
+    background: #d2a385; /* Светлый эффект при наведении */
+}
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px  hwb(355 11% 27%) ;
+}
+
+.lesson {
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    position: relative;
+}
+
+.lesson::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 20px;
+    background: linear-gradient(45deg,   hwb(355 11% 27%), #2a7a81);
+    z-index: -1;
+}
+
+.lesson h2 {
+    color:  hwb(355 11% 27%)
+}
+.lesson h1{
+    color:#2a7a81
+}
+.lesson h3{
+    color:#2a7a81
+}
+
+/* Photo gallery layout */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Photo item styles */
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    aspect-ratio: 16 / 9; /* Поддержка пропорций */
+}
+
+.photo-item:hover {
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+/* Image styles */
+.photo-item img {
+    width: 100%; /* Заполнение контейнера */
+    height: 100%; /* Заполнение контейнера */
+    object-fit: cover; /* Сохраняем пропорции без искажения */
+    border-radius: 10px;
+}
+
+/* Caption styles */
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .photo-caption {
+    opacity: 1;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+.flashcard {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.flashcard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.flashcard h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #2a7a81;
+}
+.flashcard p {
+    font-size: 1em;
+    color: #555;
+}
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Container for the entire section */
+.vocabulary-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header section with title and description */
+.vocabulary-header {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: hwb(355 11% 27%); /* Green color */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Quiz section styling */
+.quiz-container {
+    text-align: center;
+}
+
+.quiz-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.quiz-button {
+    display: inline-block;
+    background-color:hwb(355 11% 27%);
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+    background-color: hwb(355 11% 27%); /* Darker green on hover */
+}
+
+/* Styling for QR code image */
+.qr-code {
+    margin-top: 20px;
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.qr-image:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .vocabulary-container {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .quiz-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .qr-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+.correct {
+    color: green;
+}
+.incorrect {
+    color: red;
+}
+.feedback {
+    font-weight: bold;
+}
+
+
+
+
+/* Scoped CSS for Exercise 7 */
+.exercise-container {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.exercise-container .task {
+    margin: 20px 0;
+}
+
+.exercise-container input {
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+.exercise-container button {
+    padding: 10px 20px;
+    background-color: hwb(355 11% 27%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.exercise-container button:hover {
+    background-color:hwb(355 11% 27%);
+}
+
+.exercise-container .correct {
+    background-color: #4CAF50; /* Green for correct answers */
+    color: white;
+}
+
+.exercise-container .incorrect {
+    background-color: #ec6157; /* Red for incorrect answers */
+    color: white;
+}
+
+.exercise-container #feedback {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .exercise-container {
+        width: 90%;
+    }
+    
+    .exercise-container input {
+        width: 100%;
+    }
+
+    .exercise-container button {
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+
+
+/* Scoped CSS for the Reading Task */
+.task-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.task {
+    margin-bottom: 30px;
+}
+
+.task p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.task textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.task button {
+    padding: 10px 20px;
+    background-color: hwb(355 11% 27%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.task button:hover {
+    background-color:hwb(355 11% 27%);
+}
+
+.task .result {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.task .result {
+    color: #d9534f; /* Red by default for feedback */
+}
+
+.task .result.success {
+    color: #5bc0de; /* Light blue for success */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .task-container {
+        width: 90%;
+    }
+
+    .task textarea {
+        height: 120px;
+    }
+
+    .task button {
+        font-size: 18px;
+    }
+}
+
+
+
+
+.content {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.example {
+    background-color: #f4f4f9;
+    padding: 10px;
+    border-left: 5px solid #4CAF50;
+    margin-bottom: 15px;
+}
+
+.important {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.subjunctive-content {
+    margin-bottom: 30px;
+}
+
+.subjunctive-content ul {
+    padding-left: 20px;
+}
+
+.subjunctive-content li {
+    margin-bottom: 10px;
+}
+
+.example p {
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+    }
+}
+
+
+ /* CSS specific to this task */
+ .task-container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .task-container h3 {
+    font-size: 1.5em;
+    color: #2a7a81;
+  }
+
+  .question {
+    margin-bottom: 15px;
+  }
+
+  input[type="text"] {
+    width: 30%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .check-button {
+    background-color: hwb(355 11% 27%);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .check-button:hover {
+    background-color: hwb(355 11% 27%);
+  }
+
+  .feedback {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .correct {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input[type="file"] {
+    margin-bottom: 20px;
+}
+button {
+    background-color:hwb(355 11% 27%);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: hwb(355 11% 27%);
+}
+.info {
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* Container for the main content */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Instructions list styling */
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+/* Instructions list items */
+ol li {
+    margin-bottom: 15px;
+}
+
+/* Recording prompt styling */
+p.recording-prompt {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form#uploadForm {
+    background-color: #fff;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+form#uploadForm label {
+    font-size: 16px;
+    color: #444;
+}
+
+form#uploadForm input[type="file"] {
+    display: block;
+    margin: 20px 0;
+}
+
+form#uploadForm button#uploadBtn {
+    background-color: hwb(355 11% 27%);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+form#uploadForm button#uploadBtn:hover {
+    background-color: hwb(355 11% 27%);
+}
+
+/* Video Playback Section */
+#videoPlayback {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Style for the preview area text */
+h3#previewTitle {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+video#videoPlayback {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure responsiveness for different devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2, h3 {
+        font-size: 24px;
+    }
+
+    form#uploadForm {
+        padding: 15px;
+    }
+}
+
+
+.correct {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.answer-input {
+    width: 150px;
+    padding: 5px;
+}
+
+.button-container {
+    margin-top: 15px;
+}
+
+
+
+
+
+#submit-tasks-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+#submit-tasks-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+#submit-tasks-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+}
+#submit-tasks-container a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: hwb(355 11% 27%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-tasks-container a:hover {
+    background-color: hwb(355 11% 27%);
+}
+
+
+
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #050a0a;
+}
+

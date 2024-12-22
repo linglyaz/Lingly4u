@@ -1,0 +1,497 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(45deg, hwb(24 17% 37%), #c93f6d); /* Градиентный фон */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 17px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px;
+    transition: background 0.3s;
+}
+nav a:hover {
+    background: #dacfc8; /* Светлый эффект при наведении */
+}
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px  hwb(24 17% 37%);
+}
+
+.lesson {
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    position: relative;
+}
+
+.lesson::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, hwb(24 17% 37%), #c93f6d);
+    z-index: -1;
+}
+
+.lesson h2 {
+    color: #c93f6d
+}
+.lesson h1{
+    color: #c93f6d
+}
+.lesson h3{
+    color: hwb(24 17% 37%)
+}
+/* Photo gallery layout */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Photo item styles */
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    aspect-ratio: 16 / 9; /* Поддержка пропорций */
+}
+
+.photo-item:hover {
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+/* Image styles */
+.photo-item img {
+    width: 100%; /* Заполнение контейнера */
+    height: 100%; /* Заполнение контейнера */
+    object-fit: cover; /* Сохраняем пропорции без искажения */
+    border-radius: 10px;
+}
+
+/* Caption styles */
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .photo-caption {
+    opacity: 1;
+}
+
+ /* Style for the container of flashcards */
+ .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a responsive grid layout */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Style for each individual flashcard */
+.flashcard {
+    background-color: #f9f9f9; /* Light background for each card */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for flashcards */
+.flashcard:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+/* Style for the flashcard titles */
+.flashcard h3 {
+    font-size: 1.2rem; /* Slightly larger font size for terms */
+    font-weight: bold;
+    color: #333; /* Dark color for the title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+/* Style for the flashcard definitions */
+.flashcard p {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter color for the definition text */
+}
+
+/* Style for the strong tags inside the flashcards */
+.flashcard p strong {
+    color:hwb(24 17% 37%); /* Blue color for "Definition:" text */
+}
+
+/* Style for the Kazakh translation */
+.flashcard em {
+    font-style: italic;
+    color: #888; /* Light gray color for the translation */
+    display: block;
+    margin-top: 5px; /* Space above translation */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+    }
+}
+
+
+/* Container for the entire section */
+.vocabulary-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header section with title and description */
+.vocabulary-header {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: hwb(355 11% 27%); /* Green color */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+.crossword-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:  #c93f6d; /* Green background */
+    color: white; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+}
+
+.crossword-button:hover {
+    background-color: hwb(355 11% 27%); /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.crossword-button:active {
+    background-color:hwb(355 11% 27%); /* Even darker green when button is clicked */
+    transform: scale(1); /* Reset scale on click */
+}
+
+.crossword-button:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0 5px hwb(355 11% 27%); /* Blue shadow on focus */
+}
+
+/* Styling for QR code image */
+.qr-code {
+    margin-top: 20px;
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.qr-image:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+
+.exercise {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #8a2d60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b30071;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 162, 0, 0.5);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #bc8a4d;
+    border-radius: 5px;
+    background-color: #e9f7ff;
+}
+
+.words, .definitions {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+
+
+
+.fill-in-the-blanks {
+    margin: 20px;
+}
+
+.answer-input {
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.correct {
+    background-color: #d4edda; /* Green */
+}
+
+.incorrect {
+    background-color: #f8d7da; /* Red */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #db185f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #db185f;
+}
+
+
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+.incorrect {
+    color: red;
+    font-weight: bold;
+}
+.question {
+    margin-bottom: 10px;
+}
+
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+/* Styling for the submit button */
+button {
+    background-color:#db185f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color:#db185f
+}
+    /* Styles specific to this exercise */
+    .result-feedback {
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    .correct {
+        background-color: #d4edda;
+        color: #155724;
+        border: 2px solid #c3e6cb;
+    }
+
+    .incorrect {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 2px solid #f5c6cb;
+    }
+
+    .answer-input {
+        width: 150px;
+        padding: 5px;
+    }
+
+    .button-container {
+        margin-top: 15px;
+    }
+
+
+  /* Styling for the textarea elements */
+  .exercise textarea {
+    width: 100%;
+    max-width: 600px; /* Restrict the width for readability */
+    height: 100px; /* Set a comfortable height */
+    margin-bottom: 15px; /* Add space between textareas */
+    padding: 10px; /* Inner spacing for text */
+    font-size: 16px; /* Easy-to-read font size */
+    font-family: Arial, sans-serif; /* Consistent font */
+    border: 2px solid #ccc; /* Neutral border color */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    resize: none; /* Prevent resizing */
+}
+
+/* Highlight for focused textareas */
+.exercise textarea:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px #4CAF50; /* Green glow on focus */
+}
+
+/* Correct answers (green) */
+.exercise textarea.correct {
+    border-color: #4CAF50;
+    background-color: #e8f5e9; /* Light green background */
+}
+
+/* Incorrect answers (red) */
+.exercise textarea.incorrect {
+    border-color: #F44336;
+    background-color: #ffebee; /* Light red background */
+}
+
+#submit-tasks-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+#submit-tasks-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+#submit-tasks-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+}
+#submit-tasks-container a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color:  #db185f;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-tasks-container a:hover {
+    background-color: #db185f;
+}
+
+
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background:  hwb(0 99% 1%);
+    color: hwb(0 3% 97%);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+

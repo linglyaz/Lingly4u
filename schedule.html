@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Class Schedule</title>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calendar {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 50px;
+      margin-top: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .calendar-header h2 {
+      margin: 0;
+    }
+
+    button {
+      background-color:#b96384;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #b96384;
+    }
+
+    .days-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+
+    .day {
+      height: 50px;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .day:hover {
+      background-color: #b96384;
+      color: #fff;
+    }
+
+    .has-lesson {
+      background-color: #ffeb3b;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .has-lesson:hover {
+      background-color: #ffc107;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      z-index: 1000;
+    }
+
+    .modal.open {
+      display: block;
+    }
+
+    .modal-header {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .modal-content {
+      margin-bottom: 20px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 500;
+    }
+
+    .backdrop.open {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar">
+    <h1>Online Class Schedule</h1>
+    <div class="calendar-header">
+      <button id="prev-month">&lt;</button>
+      <h2 id="month-year"></h2>
+      <button id="next-month">&gt;</button>
+    </div>
+    <div class="calendar-body">
+      <div class="days-header">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+      </div>
+      <div id="days-grid" class="days-grid"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="registration-modal">
+    <div class="modal-header">Register for Microsoft Teams Lesson</div>
+    <div class="modal-content">
+      <label for="student-name">Name:</label>
+      <input type="text" id="student-name" placeholder="Your name" required>
+      <br><br>
+      <label for="phone-number">Phone Number:</label>
+      <input type="text" id="phone-number" placeholder="Your phone" required>
+      <br><br>
+      <label for="teacher-select">Teacher:</label>
+      <select id="teacher-select">
+        <option value="Teacher A">Kerimbayeva Azima</option>
+        <option value="Teacher B">Kazhikeniva Madina</option>
+        <option value="Teacher C">Sabina Bekturganova</option>
+        <option value="Teacher D">Aruzhan Zhaspanova</option>
+      </select>
+    </div>
+    <div class="modal-buttons">
+      <button id="submit-registration">Submit</button>
+      <button id="close-modal">Cancel</button>
+    </div>
+</div>
+<div class="backdrop" id="backdrop"></div>
+
+<script>
+    const daysGrid = document.getElementById("days-grid");
+    const monthYear = document.getElementById("month-year");
+    const prevMonthBtn = document.getElementById("prev-month");
+    const nextMonthBtn = document.getElementById("next-month");
+    const modal = document.getElementById("registration-modal");
+    const backdrop = document.getElementById("backdrop");
+    const closeModalBtn = document.getElementById("close-modal");
+    const submitRegistrationBtn = document.getElementById("submit-registration");
+
+    const now = new Date();
+    let currentMonth = now.getMonth();
+    let currentYear = now.getFullYear();
+
+    // Lesson days: Tuesday (2), Thursday (4), Saturday (6)
+    const lessonDays = [2, 4, 6];
+
+    function renderCalendar() {
+        daysGrid.innerHTML = "";
+        const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        monthYear.textContent = `${currentYear}-${currentMonth + 1}`;
+
+        // Add empty days for alignment
+        for (let i = 0; i < firstDay; i++) {
+            const emptyDay = document.createElement("div");
+            emptyDay.classList.add("day");
+            daysGrid.appendChild(emptyDay);
+        }
+
+        // Add days of the month
+        for (let i = 1; i <= daysInMonth; i++) {
+            const dayDiv = document.createElement("div");
+            dayDiv.classList.add("day");
+            dayDiv.textContent = i;
+
+            // Check if the day is a lesson day (Tuesday, Thursday, Saturday)
+            const dayOfWeek = new Date(currentYear, currentMonth, i).getDay();
+            if (lessonDays.includes(dayOfWeek)) {
+                dayDiv.classList.add("has-lesson");
+                dayDiv.addEventListener("click", () => openModal(i));
+            }
+
+            daysGrid.appendChild(dayDiv);
+        }
+    }
+
+    function openModal(day) {
+        const dayString = new Date(currentYear, currentMonth, day).toDateString();
+        document.querySelector(".modal-header").textContent = `Register for Microsoft Teams Lesson on ${dayString}`;
+        modal.classList.add("open");
+        backdrop.classList.add("open");
+    }
+
+    closeModalBtn.addEventListener("click", () => {
+        modal.classList.remove("open");
+        backdrop.classList.remove("open");
+    });
+
+    backdrop.addEventListener("click", () => {
+        modal.classList.remove("open");
+        backdrop.classList.remove("open");
+    });
+
+    submitRegistrationBtn.addEventListener("click", () => {
+        const name = document.getElementById("student-name").value;
+        const phone = document.getElementById("phone-number").value;
+        const teacher = document.getElementById("teacher-select").value;
+
+        if (!name || !phone || !teacher) {
+            alert("Please fill all fields!");
+            return;
+        }
+
+        // Replace Zoom link with Microsoft Teams link
+        const teamsLink = "https://teams.microsoft.com/l/meetup-join/19%3ameeting_MicrosoftExampleLink";
+        
+        alert(`Registration submitted for ${name}! You will be joining the Microsoft Teams lesson on ${teamsLink}`);
+        
+        modal.classList.remove("open");
+        backdrop.classList.remove("open");
+    });
+
+    prevMonthBtn.addEventListener("click", () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        renderCalendar();
+    });
+
+    nextMonthBtn.addEventListener("click", () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        renderCalendar();
+    });
+
+    renderCalendar();
+
+
+    submitRegistrationBtn.addEventListener("click", () => {
+    const name = document.getElementById("student-name").value;
+    const phone = document.getElementById("phone-number").value;
+    const teacher = document.getElementById("teacher-select").value;
+
+    if (!name || !phone || !teacher) {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    // Create the WhatsApp message text
+    const message = `New registration for Microsoft Teams Lesson:\nName: ${name}\nPhone: ${phone}\nTeacher: ${teacher}`;
+    
+    // Replace with your WhatsApp number (without + sign, just numbers)
+    const phoneNumber = "87782693767";  // Replace with your WhatsApp number
+    const encodedMessage = encodeURIComponent(message);
+
+    // WhatsApp link
+    const whatsappLink = `https://wa.me/qr/UOOM2APVMSMED1`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappLink, "_blank");
+
+    // Close the modal
+    modal.classList.remove("open");
+    backdrop.classList.remove("open");
+});
+
+
+
+</script>

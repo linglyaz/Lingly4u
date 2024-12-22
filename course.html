@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title> LINGLY </title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h1, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #070307;
+            background-color: white;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(to right, #94396b, #8cc08f);
+            color: rgb(252, 252, 246);
+            text-align: center;
+            padding: 30px 45px;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(205, 189, 15, 0.5);
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            color: rgb(241, 244, 242);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        nav a:hover {
+            border-bottom: 2px solid #9ae8b2;
+        }
+        .hero-button {
+            display: inline-block;
+            background-color: #ca678d;
+            color: #030303;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero-button:hover {
+            background-color: #FFC107;
+            color: white;
+        }
+        section {
+            padding: 15px 10px;
+            margin: 0 auto;
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #b96384;
+            position: relative;
+            padding-bottom: 10px;
+            display: inline-block;
+            border-bottom: 3px solid #b96384;
+        }
+        .course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    justify-content: center; /* Center the items */
+}
+
+.course-list li {
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(179, 92, 127, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    min-width: 300px; /* Ensure a minimum width for smaller screens */
+}
+
+.course-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(176, 87, 123, 0.3);
+}
+
+@media (max-width: 768px) {
+    .course-list li {
+        flex: 1 1 calc(50% - 20px); /* Two items per row on medium screens */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .course-list li {
+        flex: 1 1 100%; /* One item per row on small screens */
+        max-width: 100%;
+    }
+}
+
+        .pricing-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        }
+        .pricing-table h3 {
+            background: #b96384;
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .pricing-table ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pricing-table li {
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+        .pricing-table li:last-child {
+            border-bottom: none;
+        }
+        .contact-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .contact-form button {
+            background-color: #b96384;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #388E3C;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .course-list li {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .course-list li {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <style>
+    img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5cm;
+        margin: 2; 
+        max-width: 5cm; 
+        height: auto; 
+}
+</style>
+</head>
+<body>
+    <center><img src="https://i.ibb.co.com/ZfcNq5P/2024-09-20-153357-removebg-preview.png" alt="Логотип"border="0"></center>
+            <h1>LING4U</h1>
+            <nav>
+                <a href="#about">About Us</a>
+                <a href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Team Portfolio.html">Portfolio</a>
+                <a href="#courses">Course</a>
+                <a href="#pricing">Pricing</a>
+                <a href="https://sites.google.com/view/ling4u/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" target="_blank">English Level Test</a>
+                <a href="#contact">Contact</a>
+                <style>
+           
+
+        /* Общий стиль для кнопок */
+        .top-right-link {
+            position: absolute;
+            top: 10px;
+            text-decoration: none;
+            background-color: #8cc08f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .top-right-link:hover {
+            background-color: #76a97b;
+            color: #fff;
+        }
+
+        /* Login кнопка */
+        #login-link {
+            right: 300px;
+        }
+
+        /* Register кнопка */
+        #register-link {
+            right: 200px;
+        }
+
+         /* Иконка с именем пользователя рядом с кнопками */
+         .user-info {
+            position: absolute;
+            top: 10px; /* Расположение на одном уровне с кнопками */
+            right: 10px; /* Справа от кнопки Register */
+            display: flex;
+            align-items: center;
+            background-color: #b96384;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-info img {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+        }
+
+        .user-info span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- Ссылки с уникальными ID -->
+    <a href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\login.html" id="login-link" class="top-right-link">Login</a>
+    <a href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\register.html" id="register-link" class="top-right-link">Register</a>
+      <!-- Иконка с именем пользователя рядом с кнопками -->
+      <div class="user-info">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Icon">
+        <span id="user-name">Guest</span>
+    </div>
+</nav>
+            <a href="#contact" class="hero-button">Get Started</a>
+</header>
+    
+      
+        <script src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\scriptstud.js"></script>
+        <script>
+            // Получаем данные пользователя из localStorage
+            const userData = JSON.parse(localStorage.getItem('userData'));
+    
+            // Если есть данные пользователя, отображаем имя
+            if (userData && userData.fullName) {
+                document.getElementById('user-name').textContent = userData.fullName;
+            }
+        </script>
+    </body>
+    <style>
+        h2 {
+            color: hwb(325 27% 31%);}
+       </style>
+    <section id="about">
+        <div class="container">
+        <h2>Course Overview:</h2>
+        <p>
+            LING4U offers a structured online program designed for intermediate learners to deepen their understanding of language use. This course covers essential skills—speaking, listening, reading, and writing—through engaging lessons and interactive activities tailored to everyday contexts.</p>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #b96384;
+    }
+
+    .highlights-container {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        width: 150%;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(106, 31, 57, 0.1);
+        background-color: #fff;
+    }
+
+    .highlight-card {
+    flex: 0 0 20%;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(234, 40, 108, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    text-align: center;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.highlight-card:hover {
+    transform: scale(1.05); /* Увеличение карточки */
+    box-shadow: 0 6px 12px rgba(234, 40, 108, 0.2);
+}
+
+.highlight-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover img {
+    transform: scale(1.2); /* Увеличение изображения */
+}
+
+
+    .highlight-card h3 {
+        color: #b96384;
+        margin: 10px 0;
+    }
+
+    .highlight-card p {
+        color: #0b0101;
+        padding: 0 10px;
+    }
+
+    .highlight-card ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .highlight-card li {
+        color: #0a0404;
+        margin: 5px 0;
+    }
+
+    .arrow {
+        cursor: pointer;
+        font-size: 35px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(123, 32, 64, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+    .arrow:hover {
+        background-color: rgb(185, 172, 172);
+    }
+
+    .left-arrow { left: 20px; }
+    .right-arrow { right: 20px; }
+
+    @media (max-width: 1000px) {
+        .highlight-card {
+            min-width: 100%; /* Упрощаем на маленьких экранах */
+        }
+    }
+</style>
+
+<body>
+
+<h2>Course Highlights</h2>
+<div class="highlights-container">
+<!-- Листаемая карточка -->
+<div class="highlight-card">
+    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\8e4e41adf3e86ce587e0c4bf2e8a92cb.jpg" alt="Tailored Curriculum">
+    <h3>Tailored Curriculum</h3>
+    <p>Customized learning experiences tailored to individual goals:</p>
+    <ul>
+        <li>- Personalized assessments</li>
+        <li>- Flexible learning paths</li>
+    </ul>
+</div>
+
+<!-- Листаемая карточка -->
+<div class="highlight-card">
+    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Изображение WhatsApp 2024-10-02 в 14.20.14_f0899e93.jpg" alt="Experienced Instructors">
+    <h3>Experienced Instructors</h3>
+    <p>Qualified teaching staff dedicated to your success:</p>
+    <ul>
+        <li>- Professional development</li>
+        <li>- Continuous support</li>
+    </ul>
+</div>
+<div class="highlight-card">
+    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Изображение WhatsApp 2024-10-02 в 14.22.43_40a061db.jpg" alt="Interactive Learning">
+    <h3>Interactive Learning</h3>
+    <p>Engaging lesson formats that promote active participation:</p>
+    <ul>
+        <li>- Group discussions</li>
+        <li>- Hands-on activities</li>
+    </ul>
+</div>
+<div class="highlight-card">
+    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\934f191bb8809d5f8d2c98b64352ca84.jpg" alt="Comprehensive Skill Development">
+    <h3>Comprehensive Skill Development</h3>
+    <p>Focus on all language skills: speaking, listening, reading, and writing:</p>
+    <ul>
+        <li>- Integrated practice sessions</li>
+        <li>- Skill-building exercises</li>
+    </ul>
+</div>
+<div class="highlight-card">
+    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Изображение WhatsApp 2024-10-02 в 14.21.24_d4fd94f8.jpg" alt="Cultural Immersion">
+    <h3>Cultural Immersion</h3>
+    <p>Learn about English-speaking cultures through engaging content:</p>
+    <ul>
+        <li>- Cultural workshops</li>
+        <li>- Field trips and virtual tours</li>
+    </ul>
+</div>
+<div class="highlight-card">
+    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\8ccbd4ef1c7860a3c2fb9336a1ddd33c.jpg" alt="Flexible Scheduling">
+    <h3>Flexible Scheduling</h3>
+    <p>In-person and online options to fit your lifestyle:</p>
+    <ul>
+        <li>- Evening and weekend classes</li>
+        <li>- Self-paced online modules</li>
+    </ul>
+</div>
+
+
+<div class="arrow left-arrow" onclick="moveSlide(-1)">&#10094;</div>
+<div class="arrow right-arrow" onclick="moveSlide(1)">&#10095;</div>
+</div>
+
+<script>
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const cards = document.querySelectorAll('.highlight-card');
+    currentIndex += direction;
+
+    // Проверка границ
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex >= cards.length) currentIndex = cards.length - 1;
+
+    const offset = -currentIndex * 320; // Настройте ширину по размеру карточки
+    cards.forEach(card => {
+        card.style.transform = `translateX(${offset}px)`;
+    });
+}
+</script>
+
+
+<style>
+    /* Сброс стилей */
+    * {
+      margin: 30;
+      padding: 20;
+      box-sizing: border-box;
+    }
+
+    /* Основной контейнер для фонового изображения */
+    .background-container {
+      background-image: url('https://i.pinimg.com/1200x/68/39/97/6839971df3b2aa13cc52c94f83dfef00.jpg'); /* Замените на путь к вашему изображению */
+      background-size: cover;
+      background-position: right ;
+      border: 3px solid #b96384;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      width: 185vh;
+      height: 120vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: right;
+    }
+
+    /* Контейнер с текстом и кнопками */
+    .content {
+      color: white;
+      text-align: center;
+      max-width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Стили для заголовка, текста и кнопки */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      text-decoration: none;
+      color: white;
+      background-color:#b96384;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #892b65;
+    }
+
+    /* QR-код, позиционированный поверх фона */
+    .qr-code {
+      position: left;
+      top: 20px; /* Отступ сверху */
+      right: 50px; /* Отступ справа */
+      width: 300px; /* Ширина QR-кода */
+      height: 200px; /* Высота QR-кода */
+    }
+  </style>
+</head>
+<body>
+  <div class="background-container">
+    <!-- Контейнер с текстом -->
+    <div class="content">
+      <h1>Welcome to Our Learning Platform</h1>
+      <p>Test your level and start learning today!</p>
+      <a href="https://sites.google.com/view/ling4u/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" class="button">Take the Level Test</a>
+    </div>
+    <!-- QR-код в правом верхнем углу -->
+    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\плейсмент тест.jpg" alt="QR Code" class="qr-code"> <!-- Замените 'qr-code.png' на путь к вашему QR-коду -->
+  </div>
+</body>
+
+
+
+<style>
+    /* Стили для общего контейнера */
+    #courses {
+        text-align: left;
+        padding: 20px;
+    }
+
+    /* Стили для блока курса */
+    .course-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: #f9f9f9;
+        border: 3px solid #b96384;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .course-container:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Текстовое содержимое */
+    .course-content {
+        flex: 1;
+    }
+
+    .course-content h3 {
+        font-size: 2em;
+        color: #070204;
+        margin-bottom: 10px;
+    }
+
+    .course-content p {
+        font-size: 1.5em;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .enroll-button {
+        padding: 12px 25px;
+        background-color: #b96384;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: background-color 0.3s;
+        display: inline-block;
+    }
+
+    .enroll-button:hover {
+        background-color: #a2506d;
+    }
+
+    /* Изображение курса */
+    .course-image {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+</style>
+</head>
+<body>
+    <section id="courses">
+        <h2>Our Course:</h2>
+        <div class="course-container">
+            <!-- Text Description -->
+            <div class="course-content">
+                <h3>Intermediate Level</h3>
+                <p>For learners with basic knowledge looking to improve their language skills and confidence.</p>
+                <a href="login.html" class="enroll-button">Enroll Now</a> <!-- Update this to your main page file -->
+            </div>
+    
+            <!-- Image -->
+            <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\R.jpeg" alt="Course Image" class="course-image"> <!-- Use a relative path for the image -->
+        </div>
+    </section>
+    </body>
+    
+    <section id="book-preview">
+        <h2>Book Preview: Kazakh Fairy Tales & English Learning Exercises</h2>
+        <div class="book-container">
+            <!-- Text Description -->
+            <div class="book-content">
+                <h3>Our Exclusive Collection</h3>
+                <p>
+                    This is an exclusive collection of Kazakh fairy tales paired with English learning exercises. It is our original work, designed to help learners master the English language while immersing themselves in traditional Kazakh culture. The book includes engaging stories, along with carefully crafted exercises to improve vocabulary, reading comprehension, and language skills.
+                </p>
+                <p>
+                    <strong>Note:</strong> This book is available exclusively to students who purchase our course. Once enrolled, you'll get full access to the entire book along with additional materials to enhance your learning experience.
+                </p>
+                <a href="https://tally.so/r/wL5gWp" class="enroll-button">Enroll Now to Access Full Book</a>
+            </div>
+    
+            <!-- Book Preview (Images of 2-3 Pages) -->
+            <div class="book-preview-images">
+                <h4>Sample Pages:</h4>
+                <div class="preview-page">
+                    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Изображение WhatsApp 2024-12-20 в 22.37.15_6bb61852.jpg" alt="Page 1 of the Book" class="book-page">
+                </div>
+              
+            </div>
+        </div>
+    </section>
+    
+    
+    <style>
+        #book-preview {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    
+        .book-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    
+        .book-content {
+            width: 60%;
+        }
+    
+        .book-content h3 {
+            color: #94396b;
+            font-size: 24px;
+        }
+    
+        .book-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+    
+        .book-content a.enroll-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    
+        .book-content a.enroll-button:hover {
+            background-color:#0078d4;
+        }
+    
+        .book-preview-images {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .book-preview-images h4 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #94396b;
+        }
+    
+        .preview-page {
+            margin-bottom: 25px;
+            width: 100%;
+            text-align: center;
+        }
+    
+        .book-page {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+    
+    </style>
+    
+
+
+          
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0px; /* Добавлено для отступа */
+    }
+
+    h2 {
+        color: #b96384;
+    }
+
+    #class-schedule {
+        margin: 0px 0; /* Отступ сверху и снизу */
+    }
+
+    .schedule-container {
+        border: 2px solid #b96384; /* Цвет границы */
+        border-radius: 10px; /* Закругление углов */
+        padding: 20px; /* Внутренний отступ */
+        background-color: #ffffff; /* Фоновый цвет контейнера */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+        width: 800px; /* Ширина контейнера */
+    }
+
+    .schedule-container ul {
+        list-style: none; /* Убираем маркеры списка */
+        padding: 0; /* Убираем внутренние отступы */
+    }
+
+    .schedule-container li {
+        margin: 10px 0; /* Отступы между элементами списка */
+        color: #0b0101; /* Цвет текста */
+    }
+
+
+/* Specific styles for the "View Schedule" button */
+button.view-schedule-btn {
+    background-color: #0078d4; /* Microsoft blue */
+    color: #ffffff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 12px 20px; /* Comfortable padding */
+    font-size: 16px; /* Readable text size */
+    font-weight: bold; /* Emphasize the text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover state */
+button.view-schedule-btn:hover {
+    background-color: #005a9e; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Active state */
+button.view-schedule-btn:active {
+    background-color: #003a70; /* Even darker blue when clicked */
+    transform: scale(0.98); /* Slightly shrink on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow */
+}
+
+/* Focus state for accessibility */
+button.view-schedule-btn:focus {
+    outline: 2px solid #80bfff; /* Highlighted border for focus */
+    outline-offset: 2px; /* Spaced from the button edge */
+}
+/* Button style for Microsoft Teams link */
+.teams-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0078d4;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.teams-button:hover {
+    background-color: #005a9e;
+    transform: scale(1.05);
+}
+
+.teams-button:active {
+    background-color: #003a70;
+}
+
+.teams-button .teams-icon {
+    width: 50px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.schedule-container .teams-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #2e025a;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.schedule-container .teams-link:hover {
+    color: #2e025a;
+}
+
+.schedule-container .teams-icon {
+    width: 90px;
+    height: 60px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.schedule-container .qr-container {
+    margin-top: 20px;
+}
+
+.schedule-container .qr-code img {
+    width: 190px;
+    height: 190px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+</style>
+</head>
+<body>
+
+    <script src= "https://bot.jaicp.com/chatwidget/AMnTETyn:778ded82386988d83e0d9b91309bc62015c5d17c/justwidget.js?force=true" async></script>
+
+<section id="class-schedule">
+    <h2>Class Schedule</h2>
+    <p>Our classes are scheduled as follows:</p>
+    <div class="schedule-container">
+                <p>Click the button below to view the full online class schedule:</p>
+                <a href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\schedule.html">
+                    <button class="view-schedule-btn">View Schedule</button>
+                </a>
+          
+     <p>Join Microsoft Teams Meeting : </p>
+        <a href="https://teams.live.com/meet/9370139648417?p=jIPgNBby6MhMhKYhxP" 
+        target="_blank" 
+        class="teams-button">
+         <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\OIP.jpeg" 
+              alt="Microsoft Teams Icon" 
+              class="teams-icon">
+         Click
+     </a>
+        <div class="qr-container">
+            <p><strong>Scan the QR Code to join your class in Microsoft Teams:</strong></p>
+            <div class="qr-code">
+                <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Изображение WhatsApp 2024-12-02 в 13.05.50_280e7453.jpg" alt="Microsoft Teams QR Code">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</section>
+
+</body>
+  
+        <section id="pricing">
+        <h2>Pricing</h2>
+        <div class="pricing-table">
+            <h3>Course Fees</h3>
+            <ul>
+                <li>
+                    <span class="tooltip">Intermediate Level: <b>38000</b> tenge per month<span data-tooltip="Perfect for those just starting out!"></span></span>
+                </li>
+                <li>
+                    <span class="tooltip">Intermediate Level ( Individual Training With Tutor ): <b>50000</b> tenge per month<span data-tooltip="For those with some prior experience."></span></span>
+                </li>
+                <li>
+                    <span class="tooltip"><span data-tooltip="Designed for experienced learners."></span></span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="certificate">
+        <h2>Earn Your Certificate</h2>
+        <div class="certificate-container">
+            <!-- Сертификат -->
+            <div class="certificate-image">
+                <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Изображение WhatsApp 2024-12-04 в 12.46.06_3cdbf95f.jpg" alt="Course Certificate" class="certificate-img">
+            </div>
+    
+            <!-- Описание -->
+            <div class="certificate-description">
+                <h3>Course Completion Certificate</h3>
+                <p>
+                    After successfully completing 15 weeks of our course, you will receive a certificate of completion. This certificate demonstrates your achievement in mastering the key skills taught during the course and serves as a valuable addition to your learning portfolio.
+                </p>
+                <p>
+                    <strong>Note:</strong> The certificate will be awarded only to students who complete the full course. Upon passing all the modules and assessments, you will be eligible to receive this official certification.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        #certificate {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+    
+        .certificate-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    
+        .certificate-image {
+            width: 50%;
+            margin: 20px;
+        }
+    
+        .certificate-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+    
+        .certificate-description {
+            width: 100%;
+            margin: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+    
+        .certificate-description h3 {
+            color: #94396b;
+            font-size: 24px;
+        }
+    
+        .certificate-description p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    
+        .certificate-description strong {
+            font-weight: bold;
+        }
+    </style>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form onsubmit="return sendWhatsAppMessage();">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+    function sendWhatsAppMessage() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+    
+        // Форматирование сообщения
+        const formattedMessage = `*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
+        
+        // Ваш номер WhatsApp
+        const whatsappNumber = "+77782693767"; // Укажите ваш номер телефона в формате международного кода
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(formattedMessage)}`;
+        
+        // Открытие WhatsApp
+        window.open(whatsappUrl, '_blank');
+        
+        // Возвращаем false, чтобы форма не отправлялась
+        return false; // Чтобы предотвратить обычное отправление формы
+    }
+    </script>
+    
+
+                   
+                
+                
+                <section id="block-bottomcenterright" class="block block-blockgroup block-block-groupbottom-center-right clearfix">
+                    <nav role="navigation" aria-labelledby="block-followus-menu" id="block-followus">
+                        <h2 class="visually-hidden" id="block-followus-menu">Follow us</h2>
+                        <ul class="menu menu--menu-follow-us nav social-icons">
+                            <li>
+                                <a href="https://www.instagram.com/ling4.u?igsh=eDJkeTFqOXZmbjhj" target="_blank" class="instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span class="social-title">Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tiktok.com/@ling4u6?_t=8qJyngq99zZ&_r=1" target="_blank" class="tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span class="social-title">TikTok</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="lingly4u@gmail.com" class="email">
+                                    <i class="fas fa-envelope"></i>
+                                    <span class="social-title">Email</span>
+                                </a>
+                                <li>
+                                <a href="https://www.youtube.com/@LING4U/videos" class="youtube">
+                                    <i class="fab fa-youtube"></i>
+                                    <span class="social-title">YouTube</span>
+                                </a>
+                        
+                        
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+                
+                <style>
+                    /* Стили для блока Follow Us */
+/* Основной контейнер для всех социальных ссылок */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;              /* Включает горизонтальное выравнивание */
+    gap: 30px;                  /* Отступ между иконками */
+    justify-content: center;    /* Центрирует иконки внутри контейнера */
+    align-items: center;        /* Центрирует иконки по вертикали */
+    margin-top: 10px;
+}
+
+.social-icons li {
+    display: flex;
+}
+/* Стили для иконок и текста */
+.social-icons a {
+    text-decoration: none;
+    font-size: 48px;           /* Размер иконок */
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;    /* Иконка сверху, текст снизу */
+    align-items: center;
+    color: #333;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);     /* Увеличение при наведении */
+}
+
+/* Индивидуальные стили для каждой соцсети */
+.instagram {
+    background: -webkit-linear-gradient(#F58529, #DD2A7B, #8134AF, #515BD4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tiktok {
+    color: #69C9D0;
+    background-color: #000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.email {
+    color: #EA4335;
+    background-color: #262694;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.youtube {
+    color: #FF0000;
+}
+.youtube:hover {
+    color: #CC0000;
+}
+.youtube .social-title {
+    color: #FF0000;
+}
+
+.youtube i {
+    color: #FF0000;
+}
+
+/* Стили для текста под иконками */
+.social-title {
+    margin-top: 10px;          /* Отступ между иконкой и названием */
+    font-size: 16px;
+}
+                </style>
+                
+                
+                    
+                                
+                    
+                                    <section id="block-pagebottomcopyrightlivechecked022017" class="block block-block-content block-block-contentd5560cdb-b58a-4708-ab76-301979ac1f78 clearfix">
+                                        <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                                            <p><strong>© LING4YOU Kazakhstan</strong><br>
+                                            The Kazakhstan international organisation for cultural relations and educational opportunities.<br>
+                                            A registered charity: Semey ( Kazakhstan ).<br>
+                                            </p>
+                                        </div>
+                                    </section>
+                                </section>
+                    
+                           

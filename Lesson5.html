@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: The earth is our home    </title>
+    <link rel="stylesheet" href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\lesson5.css">
+    <script src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\script5.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Lesson 5</h1>
+        <nav>
+            <ul>
+                <li><a class="nav-link" href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\course.html">Home</a></li>
+                <li><a class="nav-link" href="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Intermediate.html">Lessons</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="lesson">
+            <h2>Lesson 5: The earth is our home     </h2>
+            <p>This lesson highlights the Earth as our vital home, emphasizing the importance of its diverse ecosystems, natural resources, and our responsibility to protect and preserve the environment for future generations.</p>
+
+            <h2>Reading:</h2>
+            <p> People and Nature </p>
+            <div class="photo-gallery" style="max-width: 800px; margin: auto;">
+                <div class="photo-item">
+                    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\ce2995c2be1fdff166df0eccbf5d9605.jpg" alt="Description of photo 1">
+                    <p class="photo-caption">   </p>
+                   
+                </div>
+                <div class="photo-item">
+                    <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\1742677e0a7934aa139c0aa036196ba5.jpg" alt="Description of photo 2">
+                    <p class="photo-caption"></p>
+                </div>
+            </div>
+            <p>The rapid rise in the human population and the corresponding demand for resources have had a dramatic impact on the natural world. While global warming, acid rain, and holes in the ozone layer affect the whole planet, other changes, such as habitat destruction and hunting, threaten individual species. Over millions of years, many species have adapted to natural changes, such as long-term variation in climate. However, it is more difficult for living things to adapt to the harmful materials released into the environment as a result of human activities.  
+                World temperatures are currently rising every year. This so called global warming is caused by the buildup of gases and water vapour in the atmosphere.
+                These gases form a layer that reflects the heat back to Barth, rather than allowing it to escape into the outer atmosphere. As the planet warms up, the water in the oceans will take up more space and water locked up in glaciers and the polar ice caps will start to melt. This could cause sea levels to rise and many habitats will disappear under water.
+                
+                Acid rains fall when poisonous gases from power stations and vehicle exhausts mix with oxygen and moisture in the air. These gases become part of the water cycle and may be carried a long way by the wind before they fall as acid rain, or snow. Acid rains poisons or kills wildlife in lakes, rivers, and forests, and damages the surrounding plant life. The problem could be controlled by reducing vehicle emissions and limiting the gases released from power stations.
+                A natural layer of ozone gas high in the atmosphere provides protection against the Sun's harmful rays. However, certain pollutant gases, including CFCs (chlorofluorocarbons) are now destroying the ozone. Since 1979, "holes" have appeared in the ozone layer - first over the Antarctic, then over the Arctic. Damaging ultraviolet rays from the Sun penetrate these "holes", slowing the growth of plants.</p>
+                
+ <div class="exercise" id="trueFalseExercise">
+        <h3>Exercise 1: True or False</h3>
+        <form id="trueFalseForm">
+            <p>1. The human population is decreasing, leading to less demand for resources. 
+                <input type="radio" name="q1" value="true"> T 
+                <input type="radio" name="q1" value="false"> F
+                <span id="result1" class="result"></span>
+            </p>
+            <p>2. Acid rain can harm wildlife in various ecosystems, including lakes and forests. 
+                <input type="radio" name="q2" value="true"> T 
+                <input type="radio" name="q2" value="false"> F
+                <span id="result2" class="result"></span>
+            </p>
+            <p>3. The ozone layer is currently getting thicker due to the reduction of CFCs. 
+                <input type="radio" name="q3" value="true"> T 
+                <input type="radio" name="q3" value="false"> F
+                <span id="result3" class="result"></span>
+            </p>
+            <p>4. Global warming can cause sea levels to rise. 
+                <input type="radio" name="q4" value="true"> T 
+                <input type="radio" name="q4" value="false"> F
+                <span id="result4" class="result"></span>
+            </p>
+            <p>5. Habitat destruction is not influenced by human activities. 
+                <input type="radio" name="q5" value="true"> T 
+                <input type="radio" name="q5" value="false"> F
+                <span id="result5" class="result"></span>
+            </p>
+            <p>6. Natural changes in climate are easier for species to adapt to than the effects of human activities. 
+                <input type="radio" name="q6" value="true"> T 
+                <input type="radio" name="q6" value="false"> F
+                <span id="result6" class="result"></span>
+            </p>
+            <button type="button" onclick="checkTrueFalse()">Check Answers</button>
+        </form>
+    </div>
+    
+    <!-- Exercise 4: Fill in the Blanks -->
+    <div class="exercise" id="fillBlanksExercise">
+        <h3>Exercise 2: Fill in the Blanks</h3>
+        <form id="fillBlanksForm">
+            <p>1. The __________ is essential for protecting the Earth from harmful UV rays from the Sun.
+                <input type="text" id="fillBlank1">
+                <span id="fillResult1" class="result"></span>
+                <span id="correctAnswer1" class="answer"></span>
+            </p>
+            <p>2. Rising __________ can lead to flooding and the destruction of various __________.
+                <input type="text" id="fillBlank2">
+                <input type="text" id="fillBlank3">
+                <span id="fillResult2" class="result"></span>
+                <span id="fillResult3" class="result"></span>
+                <span id="correctAnswer2" class="answer"></span>
+                <span id="correctAnswer3" class="answer"></span>
+            </p>
+            <p>3. __________ is caused by the accumulation of greenhouse gases in the atmosphere.
+                <input type="text" id="fillBlank4">
+                <span id="fillResult4" class="result"></span>
+                <span id="correctAnswer4" class="answer"></span>
+            </p>
+            <p>4. Many __________ are at risk due to habitat destruction and climate change.
+                <input type="text" id="fillBlank5">
+                <span id="fillResult5" class="result"></span>
+                <span id="correctAnswer5" class="answer"></span>
+            </p>
+            <p>5. __________ occurs when pollutants from vehicles and power stations mix with moisture in the air.
+                <input type="text" id="fillBlank6">
+                <span id="fillResult6" class="result"></span>
+                <span id="correctAnswer6" class="answer"></span>
+            </p>
+            <p>6. The melting of __________ contributes to rising sea levels.
+                <input type="text" id="fillBlank7">
+                <span id="fillResult7" class="result"></span>
+                <span id="correctAnswer7" class="answer"></span>
+            </p>
+        </form>
+        <button type="button" onclick="checkFillBlanks()">Check Answers</button>
+        
+    </div>
+
+<h2>Vocabulary:</h2>
+<div class="vocab-container">
+    <div class="vocab-item" onclick="toggleTranslation('translation1')">
+        1. corresponding demand
+        <div id="translation1" class="translation">
+            <strong>Definition:</strong> A demand that matches or aligns with a specific requirement. <br>
+            <strong>Translation:</strong> сәйкес талап
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation2')">
+        2. impact
+        <div id="translation2" class="translation">
+            <strong>Definition:</strong> The effect or influence of one thing on another. <br>
+            <strong>Translation:</strong> әсер, ықпал
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation3')">
+        3. acid rain
+        <div id="translation3" class="translation">
+            <strong>Definition:</strong> Rain that contains harmful amounts of acid due to pollution. <br>
+            <strong>Translation:</strong> қышқыл жаңбыр
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation4')">
+        4. ozone layer
+        <div id="translation4" class="translation">
+            <strong>Definition:</strong> A layer in Earth's atmosphere that absorbs most of the sun's ultraviolet radiation. <br>
+            <strong>Translation:</strong> озон қабаты
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation5')">
+        5. habitat
+        <div id="translation5" class="translation">
+            <strong>Definition:</strong> The natural home or environment of an animal, plant, or organism. <br>
+            <strong>Translation:</strong> табиғи орта
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation6')">
+        6. species
+        <div id="translation6" class="translation">
+            <strong>Definition:</strong> A group of living organisms that share common characteristics and can interbreed. <br>
+            <strong>Translation:</strong> түр
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation7')">
+        7. to adapt
+        <div id="translation7" class="translation">
+            <strong>Definition:</strong> To adjust or change to suit new conditions. <br>
+            <strong>Translation:</strong> бейімделу
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation8')">
+        8. water vapour
+        <div id="translation8" class="translation">
+            <strong>Definition:</strong> Water in its gaseous state. <br>
+            <strong>Translation:</strong> су булары
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation9')">
+        9. to escape
+        <div id="translation9" class="translation">
+            <strong>Definition:</strong> To break free from confinement or control. <br>
+            <strong>Translation:</strong> қашу
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation10')">
+        10. the outer atmosphere
+        <div id="translation10" class="translation">
+            <strong>Definition:</strong> The layer of gases surrounding the Earth, farthest from the surface. <br>
+            <strong>Translation:</strong> атмосфераның сыртқы қабаты
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation11')">
+        11. glaciers
+        <div id="translation11" class="translation">
+            <strong>Definition:</strong> Large masses of ice that slowly move over land. <br>
+            <strong>Translation:</strong> мұздықтар
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation12')">
+        12. poisonous gas
+        <div id="translation12" class="translation">
+            <strong>Definition:</strong> A gas that is harmful or fatal to living beings. <br>
+            <strong>Translation:</strong> улы газ
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation13')">
+        13. vehicle exhausts
+        <div id="translation13" class="translation">
+            <strong>Definition:</strong> Gases released from the engines of cars or other vehicles. <br>
+            <strong>Translation:</strong> көліктердің шығарындылары
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation14')">
+        14. moisture
+        <div id="translation14" class="translation">
+            <strong>Definition:</strong> Water or other liquid in the air or on a surface. <br>
+            <strong>Translation:</strong> ылғал
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation15')">
+        15. to reduce
+        <div id="translation15" class="translation">
+            <strong>Definition:</strong> To make something smaller or less in amount or size. <br>
+            <strong>Translation:</strong> азайту
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation16')">
+        16. emission
+        <div id="translation16" class="translation">
+            <strong>Definition:</strong> The release of a substance, especially gas or radiation, into the environment. <br>
+            <strong>Translation:</strong> шығарындылар
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation17')">
+        17. pollutant gas
+        <div id="translation17" class="translation">
+            <strong>Definition:</strong> A gas that contaminates the environment. <br>
+            <strong>Translation:</strong> ластаушы газ
+        </div>
+    </div>
+
+    <div class="vocab-item" onclick="toggleTranslation('translation18')">
+        18. to penetrate
+        <div id="translation18" class="translation">
+            <strong>Definition:</strong> To pass into or through something. <br>
+            <strong>Translation:</strong> ену
+        </div>
+    </div>
+</div>
+
+
+    <div class="container">
+        <h2>Exercise: Vocabulary Practice</h2>
+        <form id="vocabExercise">
+            <div class="question">
+                <p>1. The _______ helps to filter out harmful UV rays from the sun.</p>
+                <label><input type="radio" name="r1" value="A"> A) acid rain</label><br>
+                <label><input type="radio" name="r1" value="B"> B) ozone layer</label><br>
+                <label><input type="radio" name="r1" value="C"> C) habitat</label><br>
+                <label><input type="radio" name="r1" value="D"> D) species</label><br>
+                <span id="result11" class="result"></span>
+            </div>
+
+            <div class="question">
+                <p>2. When temperatures rise, the polar _______ are melting at an alarming rate.</p>
+                <label><input type="radio" name="r2" value="A"> A) emissions</label><br>
+                <label><input type="radio" name="r2" value="B"> B) vehicles</label><br>
+                <label><input type="radio" name="r2" value="C"> C) glaciers</label><br>
+                <label><input type="radio" name="r2" value="D"> D) impacts</label><br>
+                <span id="result12" class="result"></span>
+            </div>
+
+            <div class="question">
+                <p>3. Many plants and animals have developed unique features to _______ to their environments.</p>
+                <label><input type="radio" name="r3" value="A"> A) escape</label><br>
+                <label><input type="radio" name="r3" value="B"> B) penetrate</label><br>
+                <label><input type="radio" name="r3" value="C"> C) reduce</label><br>
+                <label><input type="radio" name="r3" value="D"> D) adapt</label><br>
+                <span id="result13" class="result"></span>
+            </div>
+
+            <div class="question">
+                <p>4. _______ from factories can harm both air quality and public health.</p>
+                <label><input type="radio" name="r4" value="A"> A) Moisture</label><br>
+                <label><input type="radio" name="r4" value="B"> B) Water vapour</label><br>
+                <label><input type="radio" name="r4" value="C"> C) Pollutant gases</label><br>
+                <label><input type="radio" name="r4" value="D"> D) Species</label><br>
+                <span id="result14" class="result"></span>
+            </div>
+
+            <div class="question">
+                <p>5. __________ is a type of precipitation that can damage forests and crops.</p>
+                <label><input type="radio" name="r5" value="A"> A) Habitat</label><br>
+                <label><input type="radio" name="r5" value="B"> B) Acid rain</label><br>
+                <label><input type="radio" name="r5" value="C"> C) Emission</label><br>
+                <label><input type="radio" name="r5" value="D"> D) Ozone</label><br>
+                <span id="result15" class="result"></span>
+            </div>
+
+            <div class="question">
+                <p>6. The presence of excess _______ in the atmosphere can lead to climate change.</p>
+                <label><input type="radio" name="r6" value="A"> A) vehicle exhausts</label><br>
+                <label><input type="radio" name="r6" value="B"> B) habitat</label><br>
+                <label><input type="radio" name="r6" value="C"> C) ozone</label><br>
+                <label><input type="radio" name="r6" value="D"> D) moisture</label><br>
+                <span id="result16" class="result"></span>
+            </div>
+
+            <div class="question">
+                <p>7. It is crucial to _______ greenhouse gas emissions to combat global warming.</p>
+                <label><input type="radio" name="r7" value="A"> A) penetrate</label><br>
+                <label><input type="radio" name="r7" value="B"> B) escape</label><br>
+                <label><input type="radio" name="r7" value="C"> C) reduce</label><br>
+                <label><input type="radio" name="r7" value="D"> D) adapt</label><br>
+                <span id="result17" class="result"></span>
+            </div>
+            <button type="button" onclick="checkAnswersss()">Check Answers</button>
+        </form>
+    </div>
+
+    <h2>Grammar:</h2>
+    <iframe src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Lesson 5. Conditionals.pdf" width="780" height="569" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <h3>Conditionals :</h3>
+    <p>Conditionals are grammatical structures used to express situations and their possible outcomes. There are four main types:</p>
+    <ul>
+        <li><strong>Zero Conditional:</strong> If + present simple, present simple. (e.g., If you heat water, it boils.)</li>
+        <li><strong>First Conditional:</strong> If + present simple, will + base verb. (e.g., If it rains, we will stay indoors.)</li>
+        <li><strong>Second Conditional:</strong> If + past simple, would + base verb. (e.g., If I had a car, I would drive to work.)</li>
+        <li><strong>Third Conditional:</strong> If + past perfect, would have + past participle. (e.g., If I had known, I would have gone.)</li>
+    </ul>
+    </body>
+    <body>
+        
+        <h2>Exercise 1: Fill in the Blanks</h2>
+        <div class="exercise">
+            <p>Complete the following sentences with the correct form of the verb in parentheses:</p>
+            <ol>
+                <li>If I <input type="text" id="answer1" placeholder="know"> you were in town, I <input type="text" id="answer1a" placeholder="invite"> you to dinner. (Second Conditional)</li>
+                <li>If you <input type="text" id="answer2" placeholder="mix"> red and blue, you <input type="text" id="answer2a" placeholder="get"> purple. (Zero Conditional)</li>
+                <li>If she <input type="text" id="answer3" placeholder="study"> harder, she <input type="text" id="answer3a" placeholder="pass"> the exam. (First Conditional)</li>
+                <li>If they <input type="text" id="answer4" placeholder="not/make"> so much noise, we <input type="text" id="answer4a" placeholder="be"> able to concentrate. (Second Conditional)</li>
+                <li>If it <input type="text" id="answer5" placeholder="not/rain"> yesterday, we <input type="text" id="answer5a" placeholder="go"> for a picnic. (Third Conditional)</li>
+            </ol>
+            <button onclick="checkFillInBlankssss()">Check Answers</button>
+            <div id="resultt1" class="result"></div>
+            <div id="resultt2" class="result"></div>
+            <div id="resultt3" class="result"></div>
+            <div id="resultt4" class="result"></div>
+            <div id="resultt5" class="result"></div>
+        </div>
+        
+        
+        <h2>Exercise 2: Multiple Choice</h2>
+        <div class="exercise">
+            <p>Choose the correct answer:</p>
+            <ol>
+                <li>If I had known about the concert, I <strong>______</strong> 
+                    <input type="radio" name="q6" value="A">A) would have gone 
+                    <input type="radio" name="q6" value="B">B) would go with you.
+                    <div id="resultp1" class="result"></div>
+                </li>
+                <li>If you heat ice, it <strong>_______</strong> 
+                    <input type="radio" name="q7" value="A">A) melts 
+                    <input type="radio" name="q7" value="B">B) would melt into water.
+                    <div id="resultp2" class="result"></div>
+                </li>
+                <li>If he <strong>_______</strong> 
+                    <input type="radio" name="q8" value="A">A) was 
+                    <input type="radio" name="q8" value="B">B) is taller, he would be a basketball player.
+                    <div id="resultp3" class="result"></div>
+                </li>
+                <li>If they <strong>_______</strong> 
+                    <input type="radio" name="q9" value="A">A) study 
+                    <input type="radio" name="q9" value="B">B) studied more, they will improve their grades.
+                    <div id="resultp4" class="result"></div>
+                </li>
+                <li>If I see her at the party, I <strong>_______</strong> 
+                    <input type="radio" name="q10" value="A">A) will tell 
+                    <input type="radio" name="q10" value="B">B) would tell her the news.
+                    <div id="resultp5" class="result"></div>
+                </li>
+            </ol>
+            <button onclick="checkMultipleChoice()">Check Answers</button>
+            <div id="result" class="result"></div>
+        </div>
+        
+  
+<body>
+    <h2>Listening:</h2>
+    <audio controls>
+        <source src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Аудио WhatsApp 2024-10-13 в 15.27.37_c6223255.mp3" type="audio/mpeg">
+    </audio>
+    <h3>Listening Task 1: Multiple Choice Questions</h3>
+    <p>Listen carefully to the following text. Afterward, choose the correct answer for each question based on what you heard.</p>
+    
+    <form id="multipleChoiceForm">
+        <ol>
+            <li>
+                What is one of the main reasons for global warming according to the text?
+                <br>
+                <input type="radio" name="q1" value="a"> a) The increase in plant life<br>
+                <input type="radio" name="q1" value="b"> b) The buildup of gases in the atmosphere<br>
+                <input type="radio" name="q1" value="c"> c) The melting of glaciers<br>
+                <span id="resulty1" class="result"></span>
+            </li>
+    
+            <li>
+                What could happen as a result of global warming?
+                <br>
+                <input type="radio" name="q2" value="a"> a) The Earth's atmosphere will cool<br>
+                <input type="radio" name="q2" value="b"> b) Sea levels will rise<br>
+                <input type="radio" name="q2" value="c"> c) Rivers will dry up<br>
+                <span id="resulty2" class="result"></span>
+            </li>
+    
+            <li>
+                What causes acid rain to form?
+                <br>
+                <input type="radio" name="q3" value="a"> a) The mixing of oxygen and water vapour<br>
+                <input type="radio" name="q3" value="b"> b) Poisonous gases from power stations and vehicles<br>
+                <input type="radio" name="q3" value="c"> c) Pollution from ocean spills<br>
+                <span id="resulty3" class="result"></span>
+            </li>
+    
+            <li>
+                Where were the first "holes" in the ozone layer detected?
+                <br>
+                <input type="radio" name="q4" value="a"> a) Over the Arctic<br>
+                <input type="radio" name="q4" value="b"> b) Over the Antarctic<br>
+                <input type="radio" name="q4" value="c"> c) Over the Pacific Ocean<br>
+                <span id="resulty4" class="result"></span>
+            </li>
+    
+            <li>
+                How does acid rain affect lakes and rivers?
+                <br>
+                <input type="radio" name="q5" value="a"> a) It makes the water cleaner<br>
+                <input type="radio" name="q5" value="b"> b) It poisons or kills wildlife<br>
+                <input type="radio" name="q5" value="c"> c) It increases the water temperature<br>
+                <span id="resulty5" class="result"></span>
+            </li>
+        </ol>
+        <button type="button" onclick="checkMultipleChoiceeees()">Check Answers</button>
+    </form>
+    
+
+    <h3>Listening Task 2: True or False</h3>
+    <p>Listen to the passage and decide whether the following statements are true or false.</p>
+    
+    <form id="trueFalseForm">
+        <ol>
+            <li>
+                Global warming is caused by water vapour alone.
+                <br>
+                <input type="radio" name="q6" value="true"> True<br>
+                <input type="radio" name="q6" value="false"> False<br>
+                <span id="resultn1" class="result"></span>
+            </li>
+    
+            <li>
+                Rising temperatures could cause sea levels to rise.
+                <br>
+                <input type="radio" name="q7" value="true"> True<br>
+                <input type="radio" name="q7" value="false"> False<br>
+                <span id="resultn2" class="result"></span>
+            </li>
+    
+            <li>
+                Acid rain helps the growth of forests and plants.
+                <br>
+                <input type="radio" name="q8" value="true"> True<br>
+                <input type="radio" name="q8" value="false"> False<br>
+                <span id="resultn3" class="result"></span>
+            </li>
+    
+            <li>
+                CFCs are responsible for destroying the ozone layer.
+                <br>
+                <input type="radio" name="q9" value="true"> True<br>
+                <input type="radio" name="q9" value="false"> False<br>
+                <span id="resultn4" class="result"></span>
+            </li>
+    
+            <li>
+                The "holes" in the ozone layer allow more harmful rays from the Sun to reach the Earth.
+                <br>
+                <input type="radio" name="q10" value="true"> True<br>
+                <input type="radio" name="q10" value="false"> False<br>
+                <span id="resultn5" class="result"></span>
+            </li>
+        </ol>
+        <button type="button" onclick="checkTrueFalseeeee()">Check Answers</button>
+    </form>
+    
+    
+    <h2>Writing</h2>
+
+    <!-- Task 1: Understanding Our Planet -->
+    <div class="task-container">
+        <h3>Task 1: Understanding Our Planet</h3>
+        <p class="task-instructions"><strong>Objective:</strong> Write about the importance of taking care of our planet Earth.</p>
+        <p><strong>Instructions:</strong></p>
+        <ul>
+            <li>Describe the role of Earth as our home and the various ecosystems that support life.</li>
+            <li>Explain why it is important to preserve the planet's natural resources and ecosystems.</li>
+            <li>Provide examples of simple actions that can help protect our environment (e.g., recycling, conserving water, reducing pollution).</li>
+        </ul>
+        <p><strong>Length:</strong> 100-150 words</p>
+    </div>
+    
+    <!-- Task 2: Taking Responsibility for Our Planet -->
+    <div class="task-container">
+        <h3>Task 2: Taking Responsibility for Our Planet</h3>
+        <p class="task-instructions"><strong>Objective:</strong> Write an essay discussing the responsibility we have in protecting the environment.</p>
+        <p><strong>Instructions:</strong></p>
+        <ul>
+            <li>Explain how human activities have impacted the Earth’s ecosystems (e.g., deforestation, pollution, climate change).</li>
+            <li>Discuss what individuals, communities, and governments can do to mitigate environmental damage.</li>
+            <li>Share your thoughts on how education and awareness can help people take responsibility for the planet.</li>
+        </ul>
+        <p><strong>Length:</strong> 100-150 words</p>
+        <p><b>Please attach your completed tasks to a Word document and submit it by email. Follow the instructions below for submission.</b></p>
+        <p><b>Make sure your file is named in the following format:</b></p>
+        <p>[YourName]_Writing_Task_Earth_Our_Home.docx</p>
+    </div>
+    
+    <h2>Submit Your Writing Task</h2>
+    <p>Please upload your Word document with your writing task. Ensure the file is in .doc or .docx format.</p>
+    
+    <div id="submit-tasks-container">
+        <label for="userName">Enter your name:</label>
+        <input type="text" id="userName" placeholder="Your name">
+    
+        <a href="https://tally.so/r/3x9oxk" id="submitLink" target="_blank">Send your tasks</a>
+    </div>
+    
+    <h2>Speaking:</h2>
+    <p><strong>Objective:</strong> Share your thoughts on how we can protect the Earth and practice your speaking skills.</p>
+    
+    <h3>Instructions:</h3>
+    <ol>
+        <li><strong>Preparation (5 minutes):</strong> Think about the following questions:
+            <ul>
+                <li>Why is the Earth so important to us?</li>
+                <li>What are some of the biggest environmental issues facing our planet today?</li>
+                <li>What steps can we take to preserve the Earth for future generations?</li>
+            </ul>
+        </li>
+        <li><strong>Recording (2-3 minutes):</strong> Use the recording feature below to capture your speech on the prompt:
+            <p><em>"Why is it important to protect the Earth, and what can we do to preserve it for future generations?"</em></p>
+        </li>
+        <li><strong>Content Guidelines:</strong>
+            <ul>
+                <li>Explain the importance of Earth as our home and the ecosystems it provides.</li>
+                <li>Discuss the current environmental challenges we face (e.g., climate change, deforestation).</li>
+                <li>Share ideas on how individuals and communities can take action to protect the environment.</li>
+                <li>Provide examples of small changes people can make to reduce their environmental impact.</li>
+            </ul>
+        </li>
+        <li><strong>Reflection (Optional):</strong> After recording, listen to your speech and reflect on how clearly you communicated your ideas and the structure of your response.</li>
+        <li><strong>Submission (if required):</strong> Upload your recorded speech to the designated platform or send it to your instructor.</li>
+    </ol>
+    
+    <h2>Submit Your Speaking Task</h2>
+    
+    <div id="submit-tasks-container">
+        <label for="userName">Enter your name:</label>
+        <input type="text" id="userName" placeholder="Your name">
+    
+        <a href="https://tally.so/r/3x9oxk" id="submitLink" target="_blank">Send your tasks</a>
+    </div>
+    
+    <h3>Scan the QR Codes</h3>
+    <div class="qr-container">
+        <div class="qr-item qr-item1">
+            <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Gliglish.jpg" alt="QR Code 1">
+            <p class="description">Scan this code to access the link. Let's practice with Gliglish!</p>
+        </div>
+        <div class="qr-item qr-item2">
+            <img src="C:\Users\user\OneDrive\Рабочий стол\мультимедия\Изображение WhatsApp 2024-12-07 в 17.47.41_22748386.jpg" alt="QR Code 2">
+            <p class="description">Gliglish lets you practice English by interacting with an AI-generated speaker</p>
+        </div>
+    </div>
+    
+    <style>
+        /* Container styles */
+        .qr-container {
+            display: flex;
+            gap: 20px; /* Space between items */
+            justify-content: center; /* Center align items */
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+    
+        /* Shared styles for QR items */
+        .qr-item {
+            text-align: center;
+        }
+    
+        /* Specific styles for the first QR code */
+        .qr-item1 img {
+            width: 150px;
+            height: auto;
+            border: 2px solid  #cdc461; /* Green border */
+            border-radius: 8px;
+        }
+    
+        .qr-item1 .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color:  #cdc461; /* Green text */
+        }
+    
+        /* Specific styles for the second QR code */
+        .qr-item2 img {
+            width: 350px; /* Different width */
+            height: 150px;
+            border: 2px solid  #3fc9c9; /* Blue border */
+            border-radius: 12px; /* Larger border radius */
+        }
+    
+        .qr-item2 .description {
+            margin-top: 10px;
+            font-size: 16px; /* Larger text */
+            color:  #3fc9c9; /* Blue text */
+        }
+    </style>
+    
+    <footer>
+        <p>&copy; 2024 Online English Lessons</p>
+    </footer>
+    
