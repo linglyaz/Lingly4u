@@ -294,8 +294,8 @@ a:hover {
 
         /* QR code image styling */
         .qr-container img {
-            width: 150px;
-            height: 150px;
+            width: 50px;
+            height: 50px;
             border-radius: 8px;
             border: 2px solid #ddd;
         }
