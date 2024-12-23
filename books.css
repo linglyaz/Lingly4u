@@ -276,45 +276,4 @@ a:hover {
 .download-button:hover {
     background-color: #005a9e;
 }
-        /* Container for the QR code */
-        .qr-container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Styling for the header text */
-        .qr-container h1 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-       .qr-container img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain; /* Гарантирует вписывание изображения в заданные размеры */
-      {     
-.qr-container img {
-    width: 50px !important;
-    height: 50px !important;
-}
-
-
-        /* Styling for the link below the QR code */
-        .qr-container p {
-            margin-top: 15px;
-            font-size: 16px;
-            color: #555;
-        }
-
-        .qr-container a {
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        .qr-container a:hover {
-            text-decoration: underline;
-        }
+      
