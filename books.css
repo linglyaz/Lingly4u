@@ -292,13 +292,16 @@ a:hover {
             margin-bottom: 20px;
         }
 
-        /* QR code image styling */
-        .qr-container img {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            border: 2px solid #ddd;
-        }
+       .qr-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain; /* Гарантирует вписывание изображения в заданные размеры */
+      {     
+.qr-container img {
+    width: 50px !important;
+    height: 50px !important;
+}
+
 
         /* Styling for the link below the QR code */
         .qr-container p {
